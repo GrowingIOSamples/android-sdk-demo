@@ -1,8 +1,8 @@
 package com.demo.app.androidsdkdemo;
 
+import android.app.Application;
 import android.content.Context;
 import android.graphics.PixelFormat;
-import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -29,7 +29,7 @@ import java.util.List;
  * Created by lishaojie on 16/7/16.
  */
 
-public class MyApplication extends MultiDexApplication {
+public class MyApplication extends Application {
     private static final String TAG = "Demo";
     public LocationClient mLocationClient = null;
     public BDLocationListener myListener = new MyLocationListener();

@@ -14,9 +14,6 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        resValue("string", "growingio_project_id", GROWINGIO_PROJECT_ID)
-        resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME)
-        resValue("string", "growingio_channel", "Github")
         multiDexEnabled true
         jackOptions.enabled false
         signingConfig signingConfigs.debug
@@ -24,6 +21,14 @@ android {
             main {
                 jniLibs.srcDirs = ['libs']
             }
+        }
+    }
+    productFlavors {
+        wandoujia {
+            resValue("string", "growingio_channel", "wandoujia-RELEASE")
+        }
+        yyb {
+            resValue("string", "growingio_channel", "yinyongbao-RELEASE")
         }
     }
     signingConfigs {
@@ -36,8 +41,18 @@ android {
     }
     buildTypes {
         release {
+            resValue("string", "growingio_project_id", GROWINGIO_PROJECT_ID_RELEASE)
+            resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME_RELEASE)
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            resValue("string", "growingio_project_id", GROWINGIO_PROJECT_ID_DEBUG)
+            resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME_DEBUG)
+        }
+        stage {
+            resValue("string", "growingio_project_id", GROWINGIO_PROJECT_ID_STAGE)
+            resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME_STAGE)
         }
     }
     lintOptions {
@@ -97,7 +112,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.growingio.android:vds-android-agent:' + SdkVersion
     compile 'com.github.devlight:infinitecycleviewpager:1.0.2'
-    compile 'com.android.support:multidex:1.0.1'
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.github.bumptech.glide:glide:3.7.0'
