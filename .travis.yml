@@ -14,7 +14,7 @@ android:
   licenses:
     - '.+'
 
-script: ./gradlew build
+script: ./gradlew build assemble
 
 cache:
   directories:
