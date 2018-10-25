@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity
     {
         URLS.put(R.id.nav_documents, "https://help.growingio.com/SDK/Android.html");
         URLS.put(R.id.nav_source_code, "https://github.com/GrowingIOSamples/android-sdk-demo");
-        URLS.put(R.id.nav_website, "https://www.growigio.com");
+        URLS.put(R.id.nav_website, "https://www.growingio.com");
         URLS.put(R.id.nav_free_try, "https://www.growingio.com/signup");
         URLS.put(R.id.nav_job, "https://www.growingio.com/joinus");
     }

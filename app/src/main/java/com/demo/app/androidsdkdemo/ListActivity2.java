@@ -34,7 +34,7 @@ public class ListActivity2 extends AppCompatActivity {
         for (int i = 0; i < 10; i++) {
             data.add("第一个 #" + i);
         }
-        GrowingIO.getInstance().setPageGroup(this, "page_ground_1");
+//        GrowingIO.getInstance().setPageGroup(this, "page_ground_1");
         listview.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, data));
     }
 
@@ -44,7 +44,7 @@ public class ListActivity2 extends AppCompatActivity {
         for (int i = 0; i < 10; i++) {
             data.add("第二个 #" + i);
         }
-        GrowingIO.getInstance().setPageGroup(this, "page_ground_2");
+//        GrowingIO.getInstance().setPageGroup(this, "page_ground_2");
         listview.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, data));
     }
 
@@ -54,7 +54,7 @@ public class ListActivity2 extends AppCompatActivity {
         for (int i = 0; i < 10; i++) {
             data.add("第三个 #" + i);
         }
-        GrowingIO.getInstance().setPageGroup(this, "page_ground_3");
+//        GrowingIO.getInstance().setPageGroup(this, "page_ground_3");
         listview.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, data));
     }
 }
