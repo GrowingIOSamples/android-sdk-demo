@@ -2,21 +2,20 @@
 
 buildscript {
     repositories {
-        mavenLocal()
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0-beta1'
+        classpath 'com.android.tools.build:gradle:3.3.0-beta01'
         classpath 'com.growingio.android:vds-gradle-plugin:' + GROWINGIO_SDK_VERSION
-        classpath 'com.growingio.android:vds-class-rewriter:' + GROWINGIO_SDK_VERSION
     }
 }
 
 allprojects {
     ext.SdkVersion = GROWINGIO_SDK_VERSION
     repositories {
-        mavenLocal()
         jcenter()
+        google()
     }
 }
 
