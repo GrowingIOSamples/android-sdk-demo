@@ -4,10 +4,11 @@ buildscript {
     repositories {
         mavenLocal()
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.growingio.android:vds-gradle-plugin:' + GROWINGIO_SDK_VERSION
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.growingio.android:vds-gradle-plugin:autotrack-2.9.0'
     }
 }
 
@@ -16,6 +17,7 @@ allprojects {
     repositories {
         mavenLocal()
         jcenter()
+        google()
     }
 }
 

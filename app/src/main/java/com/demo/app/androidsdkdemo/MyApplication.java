@@ -40,8 +40,8 @@ public class MyApplication extends Application {
         super.onCreate();
 //        LeakCanary.install(this);
         GrowingIO.startWithConfiguration(this, new Configuration()
-                .useID()
-                .trackAllFragments()
+//                .useID()
+//                .trackAllFragments()
                 .setDebugMode(true)
                 .setChannel("IEIE"));
         initFloatView();

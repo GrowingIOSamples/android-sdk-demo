@@ -24,24 +24,24 @@ public class ViewPagerFragmentActivity extends AppCompatActivity {
                     case 0: {
                         Fragment frag = new FirstPostFragment();
                         frag.setUserVisibleHint(true);
-                        growingio.setPageGroup(frag, "P" + position);
-                        growingio.setPS1(frag, "postid" + position);
+//                        growingio.setPageGroup(frag, "P" + position);
+//                        growingio.setPS1(frag, "postid" + position);
                         return frag;
                     }
 
                     case 1: {
                         Fragment frag = new FirstPostFragment();
                         frag.setUserVisibleHint(true);
-                        growingio.setPageGroup(frag, "P" + position);
-                        growingio.setPS1(frag, "postid" + position);
+//                        growingio.setPageGroup(frag, "P" + position);
+//                        growingio.setPS1(frag, "postid" + position);
                         return frag;
                     }
 
                     case 2: {
                         Fragment frag = new FirstPostFragment();
                         frag.setUserVisibleHint(true);
-                        growingio.setPageGroup(frag, "P" + position);
-                        growingio.setPS1(frag, "postid" + position);
+//                        growingio.setPageGroup(frag, "P" + position);
+//                        growingio.setPS1(frag, "postid" + position);
                         return frag;
                     }
 
