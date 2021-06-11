@@ -1,29 +1,33 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.growingio.android'
 
-def toolsVersion = '25.0.0'
-def supportVersion = "24.0.0"
+def toolsVersion = '28.0.0'
+def supportVersion = "28.0.0"
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 30
     buildToolsVersion toolsVersion
     defaultConfig {
         applicationId "com.demo.app.androidsdkdemo"
         minSdkVersion 14
-        targetSdkVersion 19
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        resValue("string", "growingio_project_id", GROWINGIO_PROJECT_ID)
-        resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME)
-        resValue("string", "growingio_channel", "Github")
         multiDexEnabled true
-        jackOptions.enabled false
         signingConfig signingConfigs.debug
         sourceSets {
             main {
                 jniLibs.srcDirs = ['libs']
             }
+        }
+    }
+    productFlavors {
+        wandoujia {
+            resValue("string", "growingio_channel", "wandoujia-RELEASE")
+        }
+        yyb {
+            resValue("string", "growingio_channel", "yinyongbao-RELEASE")
         }
     }
     signingConfigs {
@@ -36,8 +40,18 @@ android {
     }
     buildTypes {
         release {
+            resValue("string", "growingio_project_id", GROWINGIO_PROJECT_ID_RELEASE)
+            resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME_RELEASE)
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            resValue("string", "growingio_project_id", GROWINGIO_PROJECT_ID_DEBUG)
+            resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME_DEBUG)
+        }
+        stage {
+            resValue("string", "growingio_project_id", GROWINGIO_PROJECT_ID_STAGE)
+            resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME_STAGE)
         }
     }
     lintOptions {
@@ -57,7 +71,7 @@ android {
         exclude 'META-INF/LGPL2.1'
     }
 }
-
+android.defaultConfig.javaCompileOptions.annotationProcessorOptions.includeCompileClasspath = true
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -68,6 +82,8 @@ dependencies {
     compile "com.android.support:design:${supportVersion}"
     compile "com.android.support:cardview-v7:${supportVersion}"
     compile "com.android.support:palette-v7:${supportVersion}"
+    implementation 'com.growingio.android:vds-android-agent:autotrack-2.9.0'
+
     // 添加更多库来超过64K方法数限制
     //    compile 'com.google.android.gms:play-services:9.4.0'
     //    compile 'com.google.firebase:firebase-messaging:9.2.1'
@@ -94,10 +110,8 @@ dependencies {
     //    compile 'com.umeng.analytics:analytics:latest.integration'
     //    compile 'com.github.brianPlummer:tinydancer:0.0.9'
 //    compile 'org.xutils:xutils:3.3.38'
-    compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.growingio.android:vds-android-agent:' + SdkVersion
     compile 'com.github.devlight:infinitecycleviewpager:1.0.2'
-    compile 'com.android.support:multidex:1.0.1'
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.github.bumptech.glide:glide:3.7.0'

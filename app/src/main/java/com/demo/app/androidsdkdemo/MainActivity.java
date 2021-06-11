@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        GrowingIO.getInstance().trackEditText((EditText) findViewById(R.id.editText));
+//        GrowingIO.getInstance().trackEditText((EditText) findViewById(R.id.editText));
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         assert fab != null;
         fab.setOnClickListener(new View.OnClickListener() {
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity
         });
         banner.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         banner.scrollToPosition(Integer.MAX_VALUE / 2);
-        GrowingIO.trackBanner(banner, BLOG_POSTS);
+//        GrowingIO.trackBanner(banner, BLOG_POSTS);
     }
 
     @Override
